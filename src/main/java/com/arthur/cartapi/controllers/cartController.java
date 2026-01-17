@@ -15,6 +15,10 @@ public class cartController {
         this.cartServices = cartServices;
     }
 
+    @GetMapping("/health")
+    public String health() {
+        return "OK";
+    }
 
     @GetMapping("/carts")
     public List<Cart> getAllCarts(){
