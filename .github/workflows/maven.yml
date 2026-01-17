@@ -58,4 +58,13 @@ jobs:
         curl -f http://localhost:8080/health || exit 1
         docker stop cart-container
         docker rm cart-container
+
+    - name: Trivy image scan
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: cartapp:latest
+        scan-type: image
+        format: table
+
+    
       
