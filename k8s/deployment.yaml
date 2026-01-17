@@ -5,7 +5,7 @@ metadata:
   labels:
     app: cartapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: cartapp
