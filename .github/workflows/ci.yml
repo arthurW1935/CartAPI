@@ -24,9 +24,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-#    - name: Run Maven Checkstyle
-#      run: mvn checkstyle:check
-#      continue-on-error: true
+    - name: Run Maven Checkstyle
+      run: mvn checkstyle:check
+      continue-on-error: true
 
     - name: Initialise CodeQL
       uses: github/codeql-action/init@v4
@@ -36,12 +36,12 @@ jobs:
     - name: Build with Maven
       run: mvn clean package --file pom.xml
 
-#    - name: CodeQL Analysis
-#      uses: github/codeql-action/analyze@v4
+    - name: CodeQL Analysis
+      uses: github/codeql-action/analyze@v4
 
-    # - name: OWASP Dependency Check
-    #   run: mvn org.owasp:dependency-check-maven:check
-    #   continue-on-error: true
+    - name: OWASP Dependency Check
+      run: mvn org.owasp:dependency-check-maven:check
+      continue-on-error: true
 
     - name: Run Unit Tests
       run: mvn test
